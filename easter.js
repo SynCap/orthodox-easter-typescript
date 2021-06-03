@@ -40,8 +40,8 @@ function getEasterDate(year = (new Date()).getFullYear()) {
  */
 function getSacralDate(easterDate = getEasterDate(), sacrality = 'mas') {
 	const sacralDiffs = {
-		// Масленица, день перед началом Великого Поста
-		// Maslenitsa, slavic native
+		// Масленица и воскресеный день перед началом Великого Поста
+		// Maslenitsa -- slavic native and Sunday before Quadragesima
 		'mas'	: -49,
 		// Вербное воскресенье (Вход в Иерусалим, пальмовое воскресенье)
 		// Palm Sunday
@@ -90,7 +90,7 @@ function rusifyDate(date) {
  * Gets all sacral dates for specified/current year.
  * Рассчитать все даты Подвижного круга на указанный/текущий год.
  *
- * @param      {<type>}  [year=(new Date).getFullYear()]  The year
+ * @param      {Number}  [year=(new Date).getFullYear()]  The year
  * @return     {Object}  All sacral dates.
  */
 function getAllSacralDates(year = (new Date).getFullYear()) {
@@ -114,9 +114,9 @@ function getAllSacralDates(year = (new Date).getFullYear()) {
  * Gets all sacral dates by years range.
  * Рассчитать даты Подвижного Круга для нескольких лет.
  *
- * @param      {<type>}  [yearSince=(new Date()).getFullYear()-20]  The year since
- * @param      {<type>}  [yearTill=(new Date()).getFullYear()]      The year till
- * @return     {<type>}  All sacral dates by years.
+ * @param      {Number}  [yearSince=(new Date()).getFullYear()-20]  The year since
+ * @param      {Number}  [yearTill=(new Date()).getFullYear()]      The year till
+ * @return     {Object}  All sacral dates by years.
  */
 function getAllSacralDatesRange(
 	yearSince = (new Date()).getFullYear()-20,
