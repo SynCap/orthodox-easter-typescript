@@ -10,7 +10,7 @@
  * @link https://ru.wikipedia.org/wiki/Пасха#Расчёт_даты_Пасхи
  *
  * @param year <Number> [=<this year>]	Год для которого ведётся рассчёт
- * @return 	   <Date>	Дата Пасхи указанного года по Григорианскому календарю
+ * @return 	   <Date>	                Дата Пасхи указанного года по Григорианскому календарю
  */
 
 function getEasterDate(year = (new Date()).getFullYear()) {
@@ -34,9 +34,9 @@ function getEasterDate(year = (new Date()).getFullYear()) {
  * Даты Подвижного круга - Масленица, Вербное воскресенье, Радуница,
  * Вознесение, Троица
  *
- * @param  {Date}   [easterDate=getEasterDate()]  The Easter date | Дата Пасхи
- * @param  {string} [sacrality='mas']          Type of sacral | Какой праздник
- * @return {Date}   The sacral date.
+ * @param  {Date}   [easterDate = getEasterDate()]  The Easter date | Дата Пасхи
+ * @param  {string} [sacrality = 'mas']             Type of sacral | Какой праздник
+ * @return {Date}                                   The sacral date.
  */
 function getSacralDate(easterDate = getEasterDate(), sacrality = 'mas') {
 	const sacralDiffs = {
@@ -91,7 +91,7 @@ function rusifyDate(date) {
  * Рассчитать все даты Подвижного круга на указанный/текущий год.
  *
  * @param      {Number}  [year=(new Date).getFullYear()]  The year
- * @return     {Object}  All sacral dates.
+ * @return     {Object}                                   Bunch of sacral dates
  */
 function getAllSacralDates(year = (new Date).getFullYear()) {
 
@@ -124,7 +124,7 @@ function getAllSacralDatesRange(
 ) {
 	let res = {}
 
-	for (let year = 2000; year <= 2030; year++) {
+	for (let year = 2010; year <= 2030; year++) {
 		res[year] = getAllSacralDates(year)
 	}
 	return res
