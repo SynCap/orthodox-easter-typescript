@@ -137,5 +137,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# compiled result
+# Project specific
 easter.js
+*.map
