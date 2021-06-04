@@ -97,19 +97,14 @@ function rusifyDate(date : Date) : string {
  * @return     {Object}                                   Bunch of sacral dates
  */
 function getAllSacralDates(year : number = (new Date).getFullYear()) : Object {
-
-	// локально облегчим себе чтение кода
-	let sacr = getSacralDate
-	let rus = rusifyDate
-
 	let eDate = getEasterDate(year)
 	return {
-		'Масленица'  : rus(sacr(eDate)),
-		'Вербное'    : rus(sacr(eDate,'ver')),
-		'Пасха'      : rus(eDate),
-		'Радуница'   : rus(sacr(eDate,'rad')),
-		'Вознесение' : rus(sacr(eDate,'vos')),
-		'Троица'     : rus(sacr(eDate,'tro'))
+		'Масленица'  : rusifyDate(getSacralDate(eDate)),
+		'Вербное'    : rusifyDate(getSacralDate(eDate, 'ver')),
+		'Пасха'      : rusifyDate(eDate),
+		'Радуница'   : rusifyDate(getSacralDate(eDate, 'rad')),
+		'Вознесение' : rusifyDate(getSacralDate(eDate, 'vos')),
+		'Троица'     : rusifyDate(getSacralDate(eDate, 'tro'))
 	}
 }
 
