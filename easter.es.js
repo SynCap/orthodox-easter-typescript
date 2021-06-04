@@ -119,12 +119,12 @@ function getAllSacralDates(year = (new Date).getFullYear()) {
  * @return     {Object}  All sacral dates by years.
  */
 function getAllSacralDatesRange(
-	yearSince = (new Date()).getFullYear()-20,
-	yearTill = (new Date()).getFullYear()
+	yearSince = (new Date()).getFullYear() - 5,
+	yearTill = (new Date()).getFullYear() + 10
 ) {
 	let res = {}
 
-	for (let year = 2010; year <= 2030; year++) {
+	for (let year = yearSince; year <= yearTill; year++) {
 		res[year] = getAllSacralDates(year)
 	}
 	return res
