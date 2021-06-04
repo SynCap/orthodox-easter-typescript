@@ -120,7 +120,7 @@ function getAllSacralDatesRange(
 	yearSince : number = (new Date()).getFullYear() - 5,
 	yearTill : number = (new Date()).getFullYear() + 10
 ) : Object {
-	let res = {}
+	let res = {} as Record<number, object>
 
 	for (let year = yearSince; year <= yearTill; year++) {
 		res[year] = getAllSacralDates(year)
