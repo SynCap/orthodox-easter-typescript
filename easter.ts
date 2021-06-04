@@ -113,16 +113,16 @@ function getAllSacralDates(year : number = (new Date).getFullYear()) : Object {
  * Рассчитать даты Подвижного Круга для нескольких лет.
  *
  * @param      {Number}  [yearSince=(new Date()).getFullYear() - 10]  The year since
- * @param      {Number}  [yearTill=(new Date()).getFullYear()]      The year till
+ * @param      {Number}  [yearTill=(new Date()).getFullYear() + 10]      The year till
  * @return     {Object}  All sacral dates by years.
  */
 function getAllSacralDatesRange(
-	yearSince : number = (new Date()).getFullYear() - 10,
-	yearTill : number = (new Date()).getFullYear()
+	yearSince : number = (new Date()).getFullYear() - 5,
+	yearTill : number = (new Date()).getFullYear() + 10
 ) : Object {
 	let res = {}
 
-	for (let year = 2010; year <= 2030; year++) {
+	for (let year = yearSince; year <= yearTill; year++) {
 		res[year] = getAllSacralDates(year)
 	}
 	return res
