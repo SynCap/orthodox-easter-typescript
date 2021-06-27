@@ -29,7 +29,7 @@ Gets the Easter depended sacral date.
 Вознесение, Троица
 
 `sacrality` possible values /
-Доступныу значения для `sacrality`:
+Доступные значения для `sacrality`:
 
 > `mas`	:
 	Масленица и воскресеный день перед началом Великого Поста /
@@ -69,7 +69,7 @@ Human (russian) friendly representation of date
 
 	@return     {String}       String representing the date | Дата по-человечячьи
 
-## Пример применения
+## Пример применения / Examples
 
 ### function `getAllSacralDates`
 
