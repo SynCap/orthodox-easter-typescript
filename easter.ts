@@ -133,9 +133,13 @@ function getAllSacralDatesRange(
 
 /******************************************************************************/
 
-console.log('\x1bc') // clear screen in Node REPL
-console.clear() // clear console in browsers' devtools
+function showConsoleDemo() {
+	console.log('\x1bc') // clear screen in Node REPL
+	console.clear() // clear console in browsers' devtools
 
-console.table(getAllSacralDates())
+	console.table(getAllSacralDates())
 
-console.table(getAllSacralDatesRange())
+	console.table(getAllSacralDatesRange())
+}
+
+// showConsoleDemo()
