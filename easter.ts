@@ -38,7 +38,7 @@ function getEasterDate(year : number = (new Date()).getFullYear()) : Date {
  * @param  {string} [sacrality = 'mas']             Type of sacral | Какой праздник
  * @return {Date}                                   The sacral date.
  */
-function getSacralDate(easterDate : Date = getEasterDate(), sacrality : 'mas'|'ver'|'rad'|'vos'|'tro' = 'mas') : Date {
+function getSacralDate(easterDate : Date = getEasterDate(), sacrality : 'mas'|'ver'|'eas'|'rad'|'vos'|'tro' = 'mas') : Date {
 	const sacralDiffs = {
 		// Масленица и воскресеный день перед началом Великого Поста
 		// Maslenitsa -- slavic native and Sunday before Quadragesima
@@ -46,6 +46,9 @@ function getSacralDate(easterDate : Date = getEasterDate(), sacrality : 'mas'|'v
 		// Вербное воскресенье (Вход в Иерусалим, пальмовое воскресенье)
 		// Palm Sunday
 		'ver'	: -7,
+		// Сама Пасха
+		// Exact Easter
+		'eas'	: 0,
 		// Радоница (Родительский день)
 		// Radonitsa, slavic native
 		'rad'	: +9,
@@ -57,9 +60,9 @@ function getSacralDate(easterDate : Date = getEasterDate(), sacrality : 'mas'|'v
 		'tro'	: +50
 	}
 
-    // const sacralDate = new Date(easterDate)
+	// const sacralDate = new Date(easterDate)
 
-    easterDate.setDate(easterDate.getDate() + sacralDiffs[sacrality]);
+	easterDate.setDate(easterDate.getDate() + sacralDiffs[sacrality]);
 
 	return easterDate
 }
